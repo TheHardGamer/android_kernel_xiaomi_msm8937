@@ -40,6 +40,9 @@ arm64-obj-$(CONFIG_PCI)			+= pci.o
 arm64-obj-$(CONFIG_ARMV8_DEPRECATED)	+= armv8_deprecated.o
 arm64-obj-$(CONFIG_MSM_APP_API)		+= app_api.o
 arm64-obj-$(CONFIG_MSM_APP_SETTINGS)	+= app_setting.o
+obj-y +=alucard_hotplug.o
+obj-y +=fastchg.o
+obj-y +=intelli_plug.o
 
 obj-y					+= $(arm64-obj-y) vdso/
 obj-m					+= $(arm64-obj-m)
