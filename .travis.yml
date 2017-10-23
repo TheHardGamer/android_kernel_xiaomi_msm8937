@@ -7,10 +7,7 @@ script:
   - export ARCH=arm64 && git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/ && export CROSS_COMPILE=/home/travis/build/varunhardgamer/android_kernel_xiaomi_msm8937/aarch64-linux-android-4.9/bin/aarch64-linux-android- && mkdir -p out && make O=out santoni_defconfig && make O=out -j100
 after_success:
   - .travis/home/travis/build/varunhardgamer/android_kernel_xiaomi_msm8937/push.sh
- 
-setup_git
-commit_website_files
-upload_files
+
 env:
   global:
 secure: hZJlqgOzA2zIUJSWIka0PylqNaTkfHq+kS48RrHmocrK0vLyCW7ECWrzez2f2RVdTNzPi0b+yJq2uCbFfWjImZqg+XY1I75/CVVdSYMk7PJkYZ/iBDixMYY8CAkRRd5yZft9uZAdZzR4KLCPN18n7qfISv/M9VA8989NKcVyiEU=
