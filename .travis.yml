@@ -6,3 +6,4 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
+https://gist.github.com/willprice/e07efd73fb7f13f917ea
