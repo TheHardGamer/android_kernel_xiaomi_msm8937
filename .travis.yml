@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+  - 2.0.0
+deploy:
+  provider: releases
+  api_key: "63e5d75df5bbe13d140ded5ae320b884cb008751"
+  file: "/home/travis/build/varunhardgamer/android_kernel_xiaomi_msm8937/out/arch/arm64/boot/Image.gz-dtb"
+  skip_cleanup: true
+  on:
+    tags: true
