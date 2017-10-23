@@ -1,9 +1,12 @@
-language: C
-deploy:
-  provider: releases
-  api_key: "63e5d75df5bbe13d140ded5ae320b884cb008751"
-  file: "/home/travis/build/varunhardgamer/android_kernel_xiaomi_msm8937/out/arch/arm64/boot/Image.gz-dtb"
-  skip_cleanup: true
-  on:
-    tags: true
-https://gist.github.com/willprice/e07efd73fb7f13f917ea
+# Ruby is our language as asciidoctor is a ruby gem.
+lang: ruby
+before_install:
+  - sudo apt-get install pandoc
+  - gem install asciidoctor
+script:
+  - export ARCH=arm64 && git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/ && export CROSS_COMPILE=/home/travis/build/varunhardgamer/android_kernel_xiaomi_msm8937/aarch64-linux-android-4.9/bin/aarch64-linux-android- && mkdir -p out && make O=out santoni_defconfig && make O=out -j50
+after_success:
+  - .travis/push.sh
+env:
+  global:
+secure: hZJlqgOzA2zIUJSWIka0PylqNaTkfHq+kS48RrHmocrK0vLyCW7ECWrzez2f2RVdTNzPi0b+yJq2uCbFfWjImZqg+XY1I75/CVVdSYMk7PJkYZ/iBDixMYY8CAkRRd5yZft9uZAdZzR4KLCPN18n7qfISv/M9VA8989NKcVyiEU=
