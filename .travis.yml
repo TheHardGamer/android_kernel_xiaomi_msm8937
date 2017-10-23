@@ -1,6 +1,4 @@
-language: ruby
-rvm:
-  - 2.0.0
+language: C
 deploy:
   provider: releases
   api_key: "63e5d75df5bbe13d140ded5ae320b884cb008751"
